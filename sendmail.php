@@ -8,7 +8,8 @@
 
 
 
-	$cmd = "SELECT `id`, `to`, `from`, `title`, `msg`, `sent`, `interval`, `time` 
+	$cmd = "SELECT `id`, `to`, `from`, `title`, `msg`, `sent`, 
+		`interval`, `time` 
 		FROM  `futuremail` 
 		WHERE UNIX_TIMESTAMP( ) >  `time` AND `sent` = 0
 		ORDER BY  `time` 
@@ -43,7 +44,7 @@
 			SET `sent` = UNIX_TIMESTAMP()
 			WHERE `id` = $id";
 	    }
-	    $handle = mysql_query($cmd) or die(mysql_error());
+	    $handle2 = mysql_query($cmd) or die(mysql_error());
 
 
 	}
